@@ -1,0 +1,20 @@
+﻿<Window x:Class="EnumSelector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EnumSelector"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+	<d:DataContext>
+		<local:SomeViewModel />
+	</d:DataContext>
+
+	<Grid>
+		<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+			<TextBlock Text="{Binding DayOfWeek,StringFormat=You have selected {0}!}" />
+			<local:DayOfWeekSelector SelectedEnumValue="{Binding DayOfWeek}" Margin="0,5,0,0" />
+		</StackPanel>
+	</Grid>
+</Window>
